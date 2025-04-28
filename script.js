@@ -44,14 +44,23 @@ function playRound(humanChoice, computerChoice){
 }
 
 
-let playgame = () =>{
-    let humanChoice = getHumanChoice();
+function playGame(humanChoice){
     let computerChoice = getComputerChoice();;
     playRound(humanChoice, computerChoice);
+
+    div.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
 
     return (`Human: ${humanScore} Computer: ${computerScore}`);
 }
 
-for(let i = 0; i < 5; i++){
-    console.log(playgame());
-}
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+const div = document.querySelector(".score");
+
+
+rock.addEventListener("click", () => console.log(playGame('r')));
+paper.addEventListener("click", () => console.log(playGame('p')));
+scissors.addEventListener("click", () => console.log(playGame('s')));
+
